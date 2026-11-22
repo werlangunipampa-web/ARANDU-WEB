@@ -1,0 +1,10 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const core = require('../extension/core.js');
+test('três rios conhecidos', () => assert.deepEqual(core.validRivers, ['bookmarks','tabs','history']));
+test('rio inválido usa abas', () => assert.equal(core.selectRiver('other'),'tabs'));
+test('próximo e anterior circular', () => {assert.equal(core.advance(2,3,1),0);assert.equal(core.advance(0,3,-1),2)});
+test('lista vazia não seleciona', () => assert.equal(core.advance(0,0,1),-1));
+test('busca sem acentos', () => assert.equal(core.filterItems([{title:'Educação',url:'https://exemplo.org'}], 'educacao').length,1));
+test('nega URLs perigosas',()=>{assert.equal(core.safeUrl('javascript:alert(1)'),false);assert.equal(core.safeUrl('file:///tmp/x'),false);assert.equal(core.safeUrl('https://mozilla.org'),true)});

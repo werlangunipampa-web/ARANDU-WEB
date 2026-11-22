@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ARANDU WEB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div class="brand"><span aria-hidden="true">✧</span><div><strong>ARANDU WEB</strong><small>Navegação acessível</small></div></div>
+      <button id="help" type="button" class="quiet" aria-label="Mostrar atalhos" title="Ajuda (F1)">?</button>
+    </header>
+    <div class="search-wrap">
+      <label for="search">Pesquisar nos caminhos</label>
+      <input id="search" type="search" autocomplete="off" placeholder="Pesquisar abas, favoritos, histórico…">
+    </div>
+    <section class="rivers" aria-label="Selecionar um rio">
+      <div class="river-lines" aria-hidden="true"><svg viewBox="0 0 320 106" preserveAspectRatio="none"><path d="M160 94 C117 73 76 55 35 26"/><path d="M160 94 C160 65 160 43 160 24"/><path d="M160 94 C204 73 243 55 285 26"/></svg></div>
+      <div class="river-buttons" role="group" aria-label="Rios de navegação">
+        <button type="button" data-river="bookmarks" aria-pressed="false"><span aria-hidden="true">✦</span><strong>Favoritos</strong><small>Alt+1</small></button>
+        <button type="button" data-river="tabs" aria-pressed="true"><span aria-hidden="true">◈</span><strong>Abas</strong><small>Alt+2</small></button>
+        <button type="button" data-river="history" aria-pressed="false"><span aria-hidden="true">◌</span><strong>Histórico</strong><small>Alt+3</small></button>
+      </div>
+      <button id="seed" type="button" aria-label="Recolher caminhos" aria-expanded="true" class="seed" title="Expandir/recolher os rios"><span aria-hidden="true">◈</span></button>
+    </section>
+    <section class="results" aria-labelledby="river-title" id="results-section">
+      <div class="results-head"><h1 id="river-title">Abas abertas</h1><span id="count" aria-hidden="true"></span></div>
+      <p id="description" class="description">Selecione uma aba para continuar navegando.</p>
+      <ul id="items" aria-label="Itens do rio selecionado"></ul>
+      <div id="empty" class="empty" hidden>Nenhum item encontrado neste rio.</div>
+    </section>
+    <section id="help-panel" class="help" aria-labelledby="help-title" hidden>
+      <div class="help-heading"><h2 id="help-title">Atalhos</h2><button type="button" id="help-close" class="quiet">Fechar</button></div>
+      <p><kbd>Alt</kbd> + <kbd>1</kbd>, <kbd>2</kbd> ou <kbd>3</kbd>: escolher rio</p>
+      <p><kbd>↑</kbd> / <kbd>↓</kbd>: percorrer os itens</p>
+      <p><kbd>Enter</kbd>: abrir ou focar o item</p>
+      <p><kbd>/</kbd>: pesquisar; <kbd>Esc</kbd>: sair da busca</p>
+      <p><kbd>F1</kbd>: mostrar ajuda</p>
+      <p>Atalho do Firefox para abrir esta barra: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd> (pode ser alterado em Complementos).</p>
+    </section>
+    <footer><span id="status" role="status" aria-live="polite">Pronto para navegar</span><small>Local · Sem telemetria</small></footer>
+  </main>
+  <script src="core.js"></script>
+  <script src="sidebar.js"></script>
+</body>
+</html>

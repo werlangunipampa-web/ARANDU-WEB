@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "ARANDU WEB — Navegação Acessível",
+  "version": "0.1.0",
+  "description": "Navegação por abas, favoritos e histórico em uma interface limpa e acessível, inspirada nos três rios do ARANDU.",
+  "permissions": ["tabs", "bookmarks", "history"],
+  "browser_specific_settings": {
+    "gecko": { "id": "arandu-web@arandulab", "strict_min_version": "115.0" }
+  },
+  "sidebar_action": {
+    "default_title": "ARANDU WEB",
+    "default_panel": "sidebar.html",
+    "open_at_install": false
+  },
+  "browser_action": {
+    "default_title": "Abrir ARANDU WEB",
+    "default_icon": "icon.svg"
+  },
+  "background": {"scripts": ["background.js"]},
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {"default": "Ctrl+Shift+Y"},
+      "description": "Abrir a navegação ARANDU WEB"
+    }
+  },
+  "icons": {"48": "icon.svg", "96": "icon.svg"}
+}
