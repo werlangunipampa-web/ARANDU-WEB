@@ -4,6 +4,10 @@
 
 ARANDU WEB é uma extensão **experimental e de código aberto** que oferece uma barra lateral com três caminhos: **Favoritos**, **Abas** e **Histórico**. A interface privilegia clareza visual, teclado e foco perceptível. Não substitui o Firefox nem interfere na renderização dos sites.
 
+## 🚀 Instalação e downloads
+
+Veja as [instruções de instalação passo a passo](INSTALAR.md). O código da versão beta está disponível em **Code → Download ZIP**. Pacotes de distribuição na seção **Releases** serão disponibilizados separadamente; não confunda o código-fonte com um instalador assinado.
+
 ## Funcionalidades da versão 0.1.0
 
 - Favoritos: lista de sites salvos no navegador.
